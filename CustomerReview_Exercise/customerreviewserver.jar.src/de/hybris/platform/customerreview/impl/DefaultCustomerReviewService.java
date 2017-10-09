@@ -102,7 +102,7 @@
 
 	   public Integer getNumberOfCurseWords(String content)
 /*    */   {
-/*    */     return CustomerReviewManager.getInstance(). getNumberOfCurseWords(content);
+/*    */     return CustomerReviewManager.getInstance().getNumberOfCurseWords(content);
 /*    */   }
 /*    */ }
 
