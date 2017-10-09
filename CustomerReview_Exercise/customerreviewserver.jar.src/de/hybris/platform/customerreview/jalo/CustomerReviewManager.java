@@ -181,7 +181,19 @@
 /* 181 */       .search(ctx, query, values, Collections.singletonList(CustomerReview.class), true, true, 0, -1).getResult();
 /* 182 */     return result;
 /*     */   }
-/*     */ }
+
+
+            public Integer getNumberOfCurseWords(SessionContext ctx, String content)
+   	    {
+     		String query = “SELECT COUNT(*) FROM CURSEWORDS WHERE EXISTS ( SELECT \’x\’ FROM dual WHERE REGEXP_LIKE(REPLACE(LOWER({" + 
+                               "content" + "} ), \' \', \’\'), text)) AND USE_YN = ‘1’;
+
+                Map<String, String> values = Collections.singletonMap("content", content);
+                List<Integer> result = FlexibleSearch.getInstance().search(query, values, Collections.singletonList(Integer.class), true, 
+                                       true, 0, -1).getResult();
+                return (Integer)result.iterator().next();
+            }
+   }
 
 
 /* Location:              /Users/TJL4646/CustomerReview_Assignment/customerreviewserver.jar!/de/hybris/platform/customerreview/jalo/CustomerReviewManager.class

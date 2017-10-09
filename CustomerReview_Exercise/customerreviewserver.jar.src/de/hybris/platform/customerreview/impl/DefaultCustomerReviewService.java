@@ -98,6 +98,12 @@
 /* 98 */     ServicesUtil.validateParameterNotNullStandardMessage("language", language);
 /* 99 */     return getCustomerReviewDao().getReviewsForProductAndLanguage(product, language);
 /*    */   }
+
+
+	   public Integer getNumberOfCurseWords(String content)
+/*    */   {
+/*    */     return CustomerReviewManager.getInstance(). getNumberOfCurseWords(content);
+/*    */   }
 /*    */ }
 
 

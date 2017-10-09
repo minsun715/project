@@ -21,6 +21,8 @@ public abstract interface CustomerReviewService
   public abstract List<CustomerReviewModel> getReviewsForProduct(ProductModel paramProductModel);
   
   public abstract List<CustomerReviewModel> getReviewsForProductAndLanguage(ProductModel paramProductModel, LanguageModel paramLanguageModel);
+
+  public abstract Integer getNumberOfCurseWords(String content);
 }
 
 
